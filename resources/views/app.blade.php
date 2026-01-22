@@ -35,6 +35,8 @@
         <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
         <link rel="dns-prefetch" href="https://www.googletagmanager.com">
         <link rel="dns-prefetch" href="https://www.google-analytics.com">
+        <link rel="preconnect" href="https://poweredby.jads.co" crossorigin>
+        <link rel="dns-prefetch" href="https://poweredby.jads.co">
         
         <!-- Fonts with display=swap for better LCP -->
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
