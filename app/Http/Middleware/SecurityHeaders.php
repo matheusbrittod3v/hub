@@ -40,6 +40,7 @@ class SecurityHeaders
                 "img-src 'self' data: blob: https: http: https://www.googletagmanager.com https://www.google-analytics.com https://poweredby.jads.co",
                 "media-src 'self' blob: https: http:",
                 "connect-src 'self' wss: https: https://www.google-analytics.com https://region1.google-analytics.com https://poweredby.jads.co",
+                "frame-src 'self' https://adserver.juicyads.com https://poweredby.jads.co https://www.googletagmanager.com",
                 "frame-ancestors 'self'",
                 "form-action 'self'",
                 "base-uri 'self'",
