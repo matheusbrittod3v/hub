@@ -27,11 +27,14 @@
         <meta property="twitter:image" content="{{ $page['props']['seo']['image'] ?? url('/assets/images/og-image.jpg') }}">
 
         <!-- Performance: Preconnect to external resources -->
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="preconnect" href="{{ env('R2_URL', 'https://cdn.hubporn.online') }}" crossorigin>
         <link rel="dns-prefetch" href="{{ env('R2_URL', 'https://cdn.hubporn.online') }}">
         <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+        <link rel="dns-prefetch" href="https://www.google-analytics.com">
         
         <!-- Fonts with display=swap for better LCP -->
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
