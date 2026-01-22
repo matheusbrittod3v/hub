@@ -34,18 +34,19 @@ class SecurityHeaders
         if (config('app.env') === 'production') {
             $csp = implode('; ', [
                 "default-src 'self'",
-                "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://www.googletagmanager.com https://www.google-analytics.com https://poweredby.jads.co",
+                "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://www.googletagmanager.com https://www.google-analytics.com https://*.jads.co https://*.juicyads.com",
                 "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://www.googletagmanager.com",
                 "font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com",
-                "img-src 'self' data: blob: https: http: https://www.googletagmanager.com https://www.google-analytics.com https://poweredby.jads.co",
+                "img-src 'self' data: blob: https: http: https://www.googletagmanager.com https://www.google-analytics.com https://*.jads.co https://*.juicyads.com",
                 "media-src 'self' blob: https: http:",
-                "connect-src 'self' wss: https: https://www.google-analytics.com https://region1.google-analytics.com https://poweredby.jads.co",
-                "frame-src 'self' https://adserver.juicyads.com https://poweredby.jads.co https://www.googletagmanager.com",
+                "connect-src 'self' wss: https: https://www.google-analytics.com https://region1.google-analytics.com https://*.jads.co https://*.juicyads.com",
+                "frame-src 'self' blob: data: https://*.juicyads.com https://*.jads.co https://www.googletagmanager.com",
+                "child-src 'self' blob: data: https://*.juicyads.com https://*.jads.co",
                 "frame-ancestors 'self'",
                 "form-action 'self'",
                 "base-uri 'self'",
                 "object-src 'none'",
-                "upgrade-insecure-requests", // Automatically upgrades HTTP to HTTPS
+                'upgrade-insecure-requests', // Automatically upgrades HTTP to HTTPS
             ]);
             $response->headers->set('Content-Security-Policy', $csp);
 
@@ -58,4 +59,3 @@ class SecurityHeaders
         return $response;
     }
 }
-
