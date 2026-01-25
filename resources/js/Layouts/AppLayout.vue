@@ -147,6 +147,15 @@ onMounted(() => {
                 </div>
 
                 <div class="navbar-actions">
+                    <!-- Partner Link -->
+                    <a href="https://filefree.online/" target="_blank" class="partner-btn hide-mobile">
+                        <i class="fas fa-cloud-download-alt"></i>
+                        <div class="partner-btn-text">
+                            <span class="partner-label">frefile.oline</span>
+                            <span class="partner-cta">Clique aqui</span>
+                        </div>
+                    </a>
+
                     <!-- Language Selector -->
                     <div class="lang-selector">
                         <Dropdown align="right" width="48" :contentClasses="['dropdown-menu-dark']">
@@ -238,6 +247,12 @@ onMounted(() => {
         <!-- Mobile Navigation -->
         <div :class="['mobile-nav', { 'active': showingNavigationDropdown }]">
             <div class="mobile-nav-content">
+                <!-- Mobile Partner Link -->
+                <a href="https://filefree.online/" target="_blank" class="partner-btn-mobile">
+                    <i class="fas fa-cloud-download-alt"></i>
+                    <span>frefile.oline - Clique aqui</span>
+                </a>
+
                 <div class="mobile-search">
                     <div class="search-wrapper">
                         <i class="fas fa-search"></i>
@@ -601,6 +616,70 @@ h4 { font-size: 1.25rem; }
 .mobile-lang-item.active {
     background: rgba(139, 92, 246, 0.1);
     border-color: var(--primary);
+}
+
+/* Partner Button Styles */
+.partner-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+    padding: 6px 18px;
+    border-radius: var(--radius-full);
+    color: white !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+    margin-right: var(--spacing-sm);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.partner-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+    filter: brightness(1.1);
+}
+
+.partner-btn i {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.partner-btn-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.partner-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.partner-cta {
+    font-size: 0.65rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    opacity: 0.9;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 1px 6px;
+    border-radius: 4px;
+    width: fit-content;
+    margin-top: 2px;
+}
+
+.partner-btn-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+    padding: 12px;
+    border-radius: var(--radius-md);
+    color: white !important;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    text-align: center;
 }
 
 .mobile-lang-item .flag {
